@@ -8,33 +8,35 @@
     <h1 class="title">Edit Review for @Html.DisplayFor(model => Model.Product.Name)</h1>
 </div>
 
-<p>@Html.ActionLink("Back", "Details", new{ reviewId = Model.ReviewId })</p>
+<p>@Html.ActionLink("Back", "Details", "Products", new{ productId = Model.ProductId })</p>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ProductId)
     <div class="well">
-        <div class="form-group row">
-            <label class="col-md-3">Rating (1 - 5):</label>
-            <div class="col-md-9">
-                @Html.TextBoxFor(model => model.Rating, new {@class="form-control"})
+    	<div class="form">
+            <div class="form-group row">
+                <label class="col-md-3">Rating (1 - 5):</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(model => model.Rating, new {@class="form-control"})
+                </div>
             </div>
-        </div>
-    
-        <div class="form-group row">
-            <label class="col-md-3">Review:</label>
-            <div class="col-md-9">
-                @Html.TextAreaFor(model => model.ContentBody, new {rows="10", cols="95"})
+        
+            <div class="form-group row">
+                <label class="col-md-3">Review:</label>
+                <div class="col-md-9">
+                    @Html.TextAreaFor(model => model.ContentBody, new {rows="10", cols="95"})
+                </div>
             </div>
-        </div>
-    
-        <div class="form-group row">
-            <label class="col-md-3">Your Name: </label>
-            <div class="col-md-9">
-                @Html.TextBoxFor(model => model.Author, new {@class="form-control"})
+        
+            <div class="form-group row">
+                <label class="col-md-3">Your Name: </label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(model => model.Author, new {@class="form-control"})
+                </div>
             </div>
-        </div>
-    
-        <input type="submit" value="Update" class="btn btn-default" />
+        
+            <input type="submit" value="Update" class="btn btn-default" />
+		</div>
     </div>
 
 }

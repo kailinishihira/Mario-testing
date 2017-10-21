@@ -114,7 +114,7 @@ namespace MariosSpecialtyProducts.Controllers
             {
                 var thisReview = reviewRepo.Reviews.FirstOrDefault(x => x.ReviewId == reviewId);
                 reviewRepo.Remove(thisReview);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Products");
             }
             catch
             {
